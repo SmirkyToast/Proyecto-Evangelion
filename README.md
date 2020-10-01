@@ -1,2 +1,2 @@
 # LoDeNavarreid
-Cosas de mayas o algo asi
+Cosas de mallas o algo asi
