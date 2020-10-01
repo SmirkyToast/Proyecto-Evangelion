@@ -1,4 +1,4 @@
-# LoDeNavarreid
+# Integrantes
 Cosas de mallas o algo asi.
 Luis Alberto Ortiz Morales
 Le'Shon
