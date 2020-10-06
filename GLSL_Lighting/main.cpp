@@ -42,9 +42,17 @@ public:
       if (shader) shader->begin();
          //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
   
-      glmDraw(objmodel_ptr, GLM_SMOOTH);
+      
+      glTranslatef(-1.6, 0, -1.5);
       glmDraw(objmodel_ptr2, GLM_SMOOTH);
-
+      glTranslatef(-1.5, 0, -1);
+      glmDraw(objmodel_ptr2, GLM_SMOOTH);
+      glTranslatef(-1, 0, -1);
+      glmDraw(objmodel_ptr2, GLM_SMOOTH);
+      glTranslatef(-1.9, 0, -1);
+      glmDraw(objmodel_ptr2, GLM_SMOOTH);
+      glTranslatef(-1.8, 0, -0.5);
+      glmDraw(objmodel_ptr2, GLM_SMOOTH);
       if (shader) shader->end();
       glutSwapBuffers();
       glPopMatrix();
@@ -71,7 +79,7 @@ public:
         glPushMatrix();
         if (!objmodel_ptr)
         {
-            objmodel_ptr = glmReadOBJ("./models/arbol.obj");
+            objmodel_ptr = glmReadOBJ("./models/bunny.obj");
             if (!objmodel_ptr)
                 exit(0);
             
@@ -84,7 +92,7 @@ public:
         glPushMatrix();
         if (!objmodel_ptr2)
         {
-            objmodel_ptr2 = glmReadOBJ("./models/bunny.obj");
+            objmodel_ptr2 = glmReadOBJ("./models/arbol.obj");
             if (!objmodel_ptr2)
                 exit(0);
             
