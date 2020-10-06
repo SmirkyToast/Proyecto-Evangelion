@@ -40,23 +40,7 @@ public:
       glPushMatrix();
       if (shader) shader->begin();
          //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
-    /*
-      glTranslatef(-1.0, 0.0, 0.0);
-        glRotatef((GLfloat)shoulder, 0.0, 0.0, 1.0);
-        glTranslatef(1.0, 0.0, 0.0);
-        glPushMatrix();
-            glScalef(2.0, 0.4, 1.0);
-            glutWireCube(1.0);
-      glPopMatrix();
-
-      glTranslatef(1.0, 0.0, 0.0);
-      glRotatef((GLfloat)shoulder, 0.0, 0.0, 1.0);
-      glTranslatef(1.0, 0.0, 0.0);
-      glPushMatrix();
-        glScalef(2.0, 0.4, 1.0);
-        glutWireCube(1.0);
-      glPopMatrix();
-    */
+  
       glmDraw(objmodel_ptr, GLM_SMOOTH);
        
 

@@ -1,3 +1,144 @@
-﻿cl : línea de comandos warning D9035: La opción 'Gm' está desusada y se quitará en próximas versiones
+﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   main.cpp
-  TemplateProject.vcxproj -> C:\Users\jhons\OneDrive\Escritorio\GLSL_Lighting\Debug\TemplateProject.exe
+  glm.cpp
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(187,23): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(234,11): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(303,45): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(304,45): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(305,45): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(307,45): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(308,45): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(309,45): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(262,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(263,5): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(266,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(276,11): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(285,13): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(316,32): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(320,11): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(328,13): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(330,51): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(333,13): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(341,17): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(347,17): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(353,17): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(389,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(390,5): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(394,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(448,11): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(479,17): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(480,37): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(499,17): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(503,21): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(504,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(505,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(508,27): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(512,28): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(514,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(515,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(518,27): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(522,28): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(524,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(525,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(528,27): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(534,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(535,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(538,27): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(599,11): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(608,17): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(615,17): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(622,17): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(631,17): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(647,17): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(651,21): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(654,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(657,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(662,27): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(672,28): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(677,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(681,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(687,27): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(700,28): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(704,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(707,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(712,27): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(724,21): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(726,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(728,21): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(732,27): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(807,24): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(808,24): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(809,24): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(812,17): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1012,20): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1168,23): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1175,49): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1176,49): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1226,17): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1227,19): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1234,39): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1236,27): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1239,42): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1241,37): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1244,45): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1245,43): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1308,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1317,26): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1429,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1791,10): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1812,18): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1814,18): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\glm\glm.cpp(1816,18): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  glWindow.cpp
+  glutwindow.cpp
+  glsl.cpp
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\cwc\source\glsl.cpp(1351,22): warning C4244: 'initializing': conversion from 'std::streamoff' to 'unsigned long', possible loss of data
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\cwc\source\glsl.cpp(1353,23): warning C4244: 'initializing': conversion from 'std::streamoff' to 'unsigned long', possible loss of data
+  glApplication.cpp
+  Generating Code...
+cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  glew.c
+  freeglut_window.c
+  fgSetupPixelFormat(): there is still some work to do here!
+  freeglut_videoresize.c
+  freeglut_teapot.c
+  freeglut_structure.c
+  freeglut_stroke_roman.c
+  freeglut_stroke_mono_roman.c
+  freeglut_state.c
+  freeglut_overlay.c
+  freeglut_misc.c
+  freeglut_menu.c
+  freeglut_main.c
+  freeglut_joystick.c
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_joystick.c(1000,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_joystick.c(1012,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_joystick.c(1020,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_joystick.c(1249,13): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  freeglut_init.c
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_init.c(520,27): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_init.c(524,13): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_init.c(533,19): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_init.c(713,13): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_init.c(883,17): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  freeglut_glutfont_definitions.c
+  freeglut_geometry.c
+  freeglut_gamemode.c
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_gamemode.c(393,9): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_gamemode.c(395,13): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_gamemode.c(396,17): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_gamemode.c(397,21): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_gamemode.c(398,25): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_gamemode.c(399,29): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\freeglut\source\freeglut_gamemode.c(400,33): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  freeglut_font_data.c
+  freeglut_font.c
+  freeglut_ext.c
+  Generating Code...
+  Compiling...
+  freeglut_display.c
+  freeglut_cursor.c
+  freeglut_callbacks.c
+  Generating Code...
+glApplication.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  TemplateProject.vcxproj -> C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\Debug\TemplateProject.exe
