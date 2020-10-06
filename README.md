@@ -1,5 +1,2 @@
 # Integrantes
-Cosas de mallas o algo asi.
-Luis Alberto Ortiz Morales
-Le'Shon
-Le'Jotorch
+Luis Alberto Ortiz Morales, Jhon Sebastian Londoño, Jorge Figueroa
