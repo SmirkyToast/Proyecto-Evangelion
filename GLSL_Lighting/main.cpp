@@ -28,6 +28,10 @@ protected:
    bool bUp;        // flag if counting up or down.
    GLMmodel* objmodel_ptr;
    GLMmodel* objmodel_ptr2;
+   GLMmodel* objmodel_ptr3;
+   GLMmodel* objmodel_ptr4;
+   GLMmodel* objmodel_ptr5;
+
 
 
 public:
@@ -41,18 +45,52 @@ public:
       glPushMatrix();
       if (shader) shader->begin();
          //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
-  
       
-      glTranslatef(-1.6, 0, -1.5);
-      glmDraw(objmodel_ptr2, GLM_SMOOTH);
-      glTranslatef(-1.5, 0, -1);
-      glmDraw(objmodel_ptr2, GLM_SMOOTH);
-      glTranslatef(-1, 0, -1);
-      glmDraw(objmodel_ptr2, GLM_SMOOTH);
-      glTranslatef(-1.9, 0, -1);
-      glmDraw(objmodel_ptr2, GLM_SMOOTH);
-      glTranslatef(-1.8, 0, -0.5);
-      glmDraw(objmodel_ptr2, GLM_SMOOTH);
+      glPushMatrix();
+          glTranslatef(0, 0.5, 0);
+          glTranslatef(-1.6, 0, -2);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH);
+          glTranslatef(-1.5, 0, -2);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH);
+          glTranslatef(-1, 0, -2);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH);
+          glTranslatef(-1.9, 0, -2);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH);
+          glTranslatef(-1.8, 0, -1.5);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH);
+      glPopMatrix();
+
+      glPushMatrix();
+          glTranslatef(-0.1, -1, 1);
+          glmDraw(objmodel_ptr, GLM_SMOOTH);
+      glPopMatrix();
+
+      glPushMatrix();
+          glTranslatef(0, 0, 0);
+          glTranslatef(3, 0, -8);
+          glmDraw(objmodel_ptr3, GLM_SMOOTH);
+          glTranslatef(5, 0, -8);
+          glmDraw(objmodel_ptr3, GLM_SMOOTH);
+          glTranslatef(-4, 0, -8);
+          glmDraw(objmodel_ptr3, GLM_SMOOTH);
+          glTranslatef(3, 0, -8);
+          glmDraw(objmodel_ptr3, GLM_SMOOTH);
+      glPopMatrix();
+
+      glPushMatrix();
+        glTranslatef(0, 0.5, 0);
+        glmDraw(objmodel_ptr4, GLM_SMOOTH);
+      glPopMatrix();
+
+      glPushMatrix();
+        glTranslatef(5, 0, -8);
+        glmDraw(objmodel_ptr5, GLM_SMOOTH);
+        glTranslatef(-2, 0, -3);
+        glmDraw(objmodel_ptr5, GLM_SMOOTH);
+        glTranslatef(4, 0, -6);
+        glmDraw(objmodel_ptr5, GLM_SMOOTH);
+      glPopMatrix();
+
       if (shader) shader->end();
       glutSwapBuffers();
       glPopMatrix();
@@ -74,12 +112,16 @@ public:
 
         objmodel_ptr = NULL;
         objmodel_ptr2 = NULL;
+        objmodel_ptr3 = NULL;
+        objmodel_ptr4 = NULL;
+        objmodel_ptr5 = NULL;
+
 
         //***Abrir la malla
         glPushMatrix();
         if (!objmodel_ptr)
         {
-            objmodel_ptr = glmReadOBJ("./models/bunny.obj");
+            objmodel_ptr = glmReadOBJ("./models/mina.obj");
             if (!objmodel_ptr)
                 exit(0);
             
@@ -103,6 +145,51 @@ public:
             glmVertexNormals(objmodel_ptr2, 90.0);
         }
         glPopMatrix();
+        glPushMatrix();
+        if (!objmodel_ptr3)
+        {
+            objmodel_ptr3 = glmReadOBJ("./models/casa.obj");
+            if (!objmodel_ptr3)
+                exit(0);
+
+            glTranslatef(1, 1, 0);
+
+            glmUnitize(objmodel_ptr3);
+            glmFacetNormals(objmodel_ptr3);
+            glmVertexNormals(objmodel_ptr3, 90.0);
+        }
+        glPopMatrix();
+
+        glPushMatrix();
+        if (!objmodel_ptr4)
+        {
+            objmodel_ptr4 = glmReadOBJ("./models/untaladro.obj");
+            if (!objmodel_ptr4)
+                exit(0);
+
+            glTranslatef(1, 1, 0);
+
+            glmUnitize(objmodel_ptr4);
+            glmFacetNormals(objmodel_ptr4);
+            glmVertexNormals(objmodel_ptr4, 90.0);
+        }
+        glPopMatrix();
+
+        glPushMatrix();
+        if (!objmodel_ptr5)
+        {
+            objmodel_ptr5 = glmReadOBJ("./models/Edificio.obj");
+            if (!objmodel_ptr5)
+                exit(0);
+
+            glTranslatef(1, 1, 0);
+
+            glmUnitize(objmodel_ptr5);
+            glmFacetNormals(objmodel_ptr5);
+            glmVertexNormals(objmodel_ptr5, 90.0);
+        }
+        glPopMatrix();
+
 
         //*****
 		shader = SM.loadfromFile("vertexshader.txt","fragmentshader.txt"); // load (and compile, link) from file
