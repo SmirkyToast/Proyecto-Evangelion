@@ -1,2 +1,2 @@
 # Integrantes
-Luis Alberto Ortiz Morales, Jhon Sebastian Londoño, Jorge Figueroa
+Luis Alberto Ortiz Morales, Jhon Sebastian Londoño, Jorge Andrés Figueroa
