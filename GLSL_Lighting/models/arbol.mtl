@@ -1,0 +1,50 @@
+# Blender MTL File: 'arbol.blend'
+# Material Count: 4
+
+newmtl Branch
+Ns 9.645958
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\hp15-da0016la\\Downloads\\Branch_Tex.jpg
+map_d C:\\Users\\hp15-da0016la\\Downloads\\BranchAlpha_Tex.jpg
+
+newmtl Leaf1
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\hp15-da0016la\\Downloads\\Leaf1.png
+map_d C:\\Users\\hp15-da0016la\\Downloads\\Leaf1.png
+
+newmtl Leaf2
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\hp15-da0016la\\Downloads\\Leaf2.png
+map_d C:\\Users\\hp15-da0016la\\Downloads\\Leaf2.png
+
+newmtl Tree_Body
+Ns 20.676564
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.240000 0.240000 0.240000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump -bm 0.690000 C:\\Users\\hp15-da0016la\\Downloads\\TreeBody_Tex_NRM.jpg
+map_Kd C:\\Users\\hp15-da0016la\\Downloads\\TreeBody_Tex.jpg

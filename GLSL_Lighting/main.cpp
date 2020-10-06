@@ -27,6 +27,7 @@ protected:
    float timer010;  // timer counting 0->1->0
    bool bUp;        // flag if counting up or down.
    GLMmodel* objmodel_ptr;
+   GLMmodel* objmodel_ptr2;
 
 
 public:
@@ -42,7 +43,7 @@ public:
          //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
   
       glmDraw(objmodel_ptr, GLM_SMOOTH);
-       
+      glmDraw(objmodel_ptr2, GLM_SMOOTH);
 
       if (shader) shader->end();
       glutSwapBuffers();
@@ -64,18 +65,37 @@ public:
 		glEnable(GL_DEPTH_TEST);
 
         objmodel_ptr = NULL;
+        objmodel_ptr2 = NULL;
 
         //***Abrir la malla
+        glPushMatrix();
         if (!objmodel_ptr)
         {
-            objmodel_ptr = glmReadOBJ("./models/bunny.obj");
+            objmodel_ptr = glmReadOBJ("./models/arbol.obj");
             if (!objmodel_ptr)
                 exit(0);
-
+            
+            glTranslatef(-1, -1, 0);
             glmUnitize(objmodel_ptr);
             glmFacetNormals(objmodel_ptr);
             glmVertexNormals(objmodel_ptr, 90.0);
         }
+        glPopMatrix();
+        glPushMatrix();
+        if (!objmodel_ptr2)
+        {
+            objmodel_ptr2 = glmReadOBJ("./models/bunny.obj");
+            if (!objmodel_ptr2)
+                exit(0);
+            
+            glTranslatef(1, 1, 0);
+            
+            glmUnitize(objmodel_ptr2);
+            glmFacetNormals(objmodel_ptr2);
+            glmVertexNormals(objmodel_ptr2, 90.0);
+        }
+        glPopMatrix();
+
         //*****
 		shader = SM.loadfromFile("vertexshader.txt","fragmentshader.txt"); // load (and compile, link) from file
 		if (shader==0) 

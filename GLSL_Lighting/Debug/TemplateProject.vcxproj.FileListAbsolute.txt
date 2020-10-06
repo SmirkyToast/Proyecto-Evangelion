@@ -2,3 +2,5 @@ C:\Users\jhons\OneDrive\Escritorio\GLSL_Lighting\Debug\TemplateProject.exe
 C:\Users\jhons\OneDrive\Escritorio\GLSL_Lighting\Debug\TemplateProject.pdb
 C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\Debug\TemplateProject.exe
 C:\Users\laom5\OneDrive\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\Debug\TemplateProject.pdb
+C:\Users\hp15-da0016la\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\Debug\TemplateProject.exe
+C:\Users\hp15-da0016la\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\Debug\TemplateProject.pdb
