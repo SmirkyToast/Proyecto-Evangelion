@@ -1,0 +1,3 @@
+﻿cl : línea de comandos warning D9035: La opción 'Gm' está desusada y se quitará en próximas versiones
+  main.cpp
+  TemplateProject.vcxproj -> C:\Users\jhons\OneDrive\Escritorio\GLSL_Lighting\Debug\TemplateProject.exe

@@ -1,0 +1,2 @@
+C:\Users\jhons\OneDrive\Escritorio\GLSL_Lighting\Debug\TemplateProject.exe
+C:\Users\jhons\OneDrive\Escritorio\GLSL_Lighting\Debug\TemplateProject.pdb
