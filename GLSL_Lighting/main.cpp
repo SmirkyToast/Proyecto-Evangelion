@@ -47,20 +47,22 @@ public:
          //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
       
       glPushMatrix();
+      //arboles
           glTranslatef(0, 0.5, 0);
           glTranslatef(-1.6, 0, -2);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL);
           glTranslatef(-1.5, 0, -2);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL);
           glTranslatef(-1, 0, -2);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL);
           glTranslatef(-1.9, 0, -2);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL);
           glTranslatef(-1.8, 0, -1.5);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL);
       glPopMatrix();
 
       glPushMatrix();
+      //taladro(creo)
           glTranslatef(-0.1, -1, 1);
           glmDraw(objmodel_ptr, GLM_SMOOTH);
       glPopMatrix();
@@ -309,12 +311,12 @@ public:
      GLfloat light_Ka[]  = {1.0f, 0.5f, 0.5f, 1.0f};
      GLfloat light_Kd[]  = {1.0f, 0.1f, 0.1f, 1.0f};
      GLfloat light_Ks[]  = {1.0f, 1.0f, 1.0f, 1.0f};
-
+    /*
      glLightfv(GL_LIGHT0, GL_POSITION, light_pos);
      glLightfv(GL_LIGHT0, GL_AMBIENT, light_Ka);
      glLightfv(GL_LIGHT0, GL_DIFFUSE, light_Kd);
      glLightfv(GL_LIGHT0, GL_SPECULAR, light_Ks);
-
+     */
      // -------------------------------------------
      // Material parameters:
 
@@ -323,12 +325,14 @@ public:
      GLfloat material_Ks[] = {0.8f, 0.8f, 0.0f, 1.0f};
      GLfloat material_Ke[] = {0.1f, 0.0f, 0.0f, 0.0f};
      GLfloat material_Se = 20.0f;
-
+     
+     /*
      glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, material_Ka);
      glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, material_Kd);
      glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, material_Ks);
      glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, material_Ke);
      glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, material_Se);
+     */
    }
 };
 
