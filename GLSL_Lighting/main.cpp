@@ -76,14 +76,13 @@ public:
 	
       //timer010 = 0.09; //for screenshot!
       glPushMatrix();
-      if (shader) shader->begin();
+      if (shader1) shader1->begin();
          //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
       
       glPushMatrix();
       //arboles
           glTranslatef(0, 0.5, 0);
           glTranslatef(-1.6, 0, -2);
-          if (shader) shader->begin();
           glBindTexture(GL_TEXTURE_2D, texid);
           glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
           glTranslatef(-1.5, 0, -2);
@@ -95,7 +94,7 @@ public:
           glTranslatef(-1.8, 0, -1.5);
           glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
       glPopMatrix();
-      if (shader) shader->end();
+      if (shader1) shader1->end();
       if (shader) shader->begin();
       glPushMatrix();
       //taladro(creo)
@@ -147,6 +146,25 @@ public:
 		glClearColor(0.5f, 0.5f, 1.0f, 0.0f);
 		glShadeModel(GL_SMOOTH);
 		glEnable(GL_DEPTH_TEST);
+        //texturas
+        shader = SM.loadfromFile("vertexshader.txt", "fragmentshader.txt"); // load (and compile, link) from file
+        if (shader == 0)
+            std::cout << "Error Loading, compiling or linking shader1\n";
+        else
+        {
+            ProgramObject = shader->GetProgramObject();
+        }
+        shader1 = SM.loadfromFile("vertexshaderT.txt", "fragmentshaderT.txt"); // load (and compile, link) from file
+        if (shader1 == 0)
+            std::cout << "Error Loading, compiling or linking shader2\n";
+        else
+        {
+            ProgramObject = shader1->GetProgramObject();
+        }
+
+        time0 = clock();
+        timer010 = 0.0f;
+        bUp = true;
 
         objmodel_ptr = NULL;
         objmodel_ptr2 = NULL;
@@ -184,6 +202,7 @@ public:
         }
         glPopMatrix();
         glPushMatrix();
+        
         if (!objmodel_ptr3)
         {
             objmodel_ptr3 = glmReadOBJ("./models/casa.obj");
@@ -230,18 +249,8 @@ public:
 
 
         //*****
-		shader = SM.loadfromFile("vertexshader.txt","fragmentshader.txt"); // load (and compile, link) from file
-		if (shader==0) 
-         std::cout << "Error Loading, compiling or linking shader\n";
-      else
-      {
-         ProgramObject = shader->GetProgramObject();
-      }
-
-      time0 = clock();
-      timer010 = 0.0f;
-      bUp = true;
-
+		
+      
       DemoLight();
 
 	}

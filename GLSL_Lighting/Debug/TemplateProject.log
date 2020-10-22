@@ -3,7 +3,7 @@
 C:\Users\hp15-da0016la\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\main.cpp(43,16): warning C4101: 'h': variable local sin referencia
 C:\Users\hp15-da0016la\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\main.cpp(43,13): warning C4101: 'w': variable local sin referencia
 C:\Users\hp15-da0016la\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\main.cpp(85,1): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\hp15-da0016la\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\main.cpp(93,1): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\hp15-da0016la\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\main.cpp(95,1): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\hp15-da0016la\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\main.cpp(102,1): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\hp15-da0016la\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\main.cpp(92,1): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\hp15-da0016la\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\main.cpp(94,1): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\hp15-da0016la\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\main.cpp(101,1): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
   TemplateProject.vcxproj -> C:\Users\hp15-da0016la\Documents\GitHub\Proyecto-Evangelion\GLSL_Lighting\Debug\TemplateProject.exe
