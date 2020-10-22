@@ -10,6 +10,7 @@
 #include "glsl.h"
 #include <time.h>
 #include "glm/glm.h"
+#include <FreeImage.h>
 #define tail 20
 #define tail2 45
 
@@ -22,6 +23,7 @@ class myWindow : public cwc::glutWindow
 protected:
    cwc::glShaderManager SM;
    cwc::glShader *shader;
+   cwc::glShader* shader1;
    GLuint ProgramObject;
    clock_t time0,time1;
    float timer010;  // timer counting 0->1->0
@@ -31,11 +33,42 @@ protected:
    GLMmodel* objmodel_ptr3;
    GLMmodel* objmodel_ptr4;
    GLMmodel* objmodel_ptr5;
-
+   GLuint texid;
 
 
 public:
 	myWindow(){}
+    void initialize_textures(void)
+    {
+        int w, h;
+        GLubyte* data = 0;
+        //data = glmReadPPM("soccer_ball_diffuse.ppm", &w, &h);
+        //std::cout << "Read soccer_ball_diffuse.ppm, width = " << w << ", height = " << h << std::endl;
+
+        //dib1 = loadImage("soccer_ball_diffuse.jpg"); //FreeImage
+
+        glGenTextures(1, &texid);
+        glBindTexture(GL_TEXTURE_2D, texid);
+        glTexEnvi(GL_TEXTURE_2D, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
+        // Loading JPG file
+        FIBITMAP* bitmap = FreeImage_Load(
+            FreeImage_GetFileType("./mallas/JORGEFACHASTONKS.jpg", 0),
+            "./mallas/JORGEFACHASTONKS.jpg");  //*** Para Textura: esta es la ruta en donde se encuentra la textura
+
+        FIBITMAP* pImage = FreeImage_ConvertTo32Bits(bitmap);
+        int nWidth = FreeImage_GetWidth(pImage);
+        int nHeight = FreeImage_GetHeight(pImage);
+
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, nWidth, nHeight,
+            0, GL_BGRA, GL_UNSIGNED_BYTE, (void*)FreeImage_GetBits(pImage));
+
+        FreeImage_Unload(pImage);
+        //
+        glEnable(GL_TEXTURE_2D);
+    }
 
 	virtual void OnRender(void)
 	{
@@ -50,17 +83,20 @@ public:
       //arboles
           glTranslatef(0, 0.5, 0);
           glTranslatef(-1.6, 0, -2);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL);
+          if (shader) shader->begin();
+          glBindTexture(GL_TEXTURE_2D, texid);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
           glTranslatef(-1.5, 0, -2);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
           glTranslatef(-1, 0, -2);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
           glTranslatef(-1.9, 0, -2);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
           glTranslatef(-1.8, 0, -1.5);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
       glPopMatrix();
-
+      if (shader) shader->end();
+      if (shader) shader->begin();
       glPushMatrix();
       //taladro(creo)
           glTranslatef(-0.1, -1, 1);
