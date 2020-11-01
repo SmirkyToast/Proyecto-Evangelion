@@ -23,7 +23,7 @@ class myWindow : public cwc::glutWindow
 protected:
    cwc::glShaderManager SM;
    cwc::glShader *shader;
-   cwc::glShader* shader1;
+   cwc::glShader *shader1;
    GLuint ProgramObject;
    clock_t time0,time1;
    float timer010;  // timer counting 0->1->0
@@ -85,6 +85,9 @@ public:
           glTranslatef(-1.6, 0, -2);
           glBindTexture(GL_TEXTURE_2D, texid);
           glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
+      if (shader1) shader1->end();
+
+      if (shader) shader->begin();
           glTranslatef(-1.5, 0, -2);
           glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
           glTranslatef(-1, 0, -2);
@@ -94,8 +97,7 @@ public:
           glTranslatef(-1.8, 0, -1.5);
           glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
       glPopMatrix();
-      if (shader1) shader1->end();
-      if (shader) shader->begin();
+      
       glPushMatrix();
       //taladro(creo)
           glTranslatef(-0.1, -1, 1);
