@@ -10,9 +10,7 @@
 #include "glsl.h"
 #include <time.h>
 #include "glm/glm.h"
-#include <FreeImage.h>
-#define tail 20
-#define tail2 45
+#include <FreeImage.h>//*** Para Textura: Incluir librería
 
 
 //-----------------------------------------------------------------------------
@@ -55,8 +53,8 @@ public:
 
         // Loading JPG file
         FIBITMAP* bitmap = FreeImage_Load(
-            FreeImage_GetFileType("./mallas/JORGEFACHASTONKS.jpg", 0),
-            "./mallas/JORGEFACHASTONKS.jpg");  //*** Para Textura: esta es la ruta en donde se encuentra la textura
+            FreeImage_GetFileType("./mallas/jorge.jpg", 0),
+            "./mallas/jorge.jpg");  //*** Para Textura: esta es la ruta en donde se encuentra la textura
 
         FIBITMAP* pImage = FreeImage_ConvertTo32Bits(bitmap);
         int nWidth = FreeImage_GetWidth(pImage);
@@ -76,18 +74,21 @@ public:
 	
       //timer010 = 0.09; //for screenshot!
       glPushMatrix();
-      if (shader1) shader1->begin();
-         //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
       
-      glPushMatrix();
+         //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
+
       //arboles
+      if (shader1) shader1->begin();
+          glPushMatrix();      
           glTranslatef(0, 0.5, 0);
           glTranslatef(-1.6, 0, -2);
-          glBindTexture(GL_TEXTURE_2D, texid);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
+          //glBindTexture(GL_TEXTURE_2D, texid);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL);
+          glPopMatrix();
       if (shader1) shader1->end();
 
-      if (shader) shader->begin();
+      
+      /*
           glTranslatef(-1.5, 0, -2);
           glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
           glTranslatef(-1, 0, -2);
@@ -98,6 +99,7 @@ public:
           glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
       glPopMatrix();
       
+      if (shader) shader->begin();
       glPushMatrix();
       //taladro(creo)
           glTranslatef(-0.1, -1, 1);
@@ -131,6 +133,7 @@ public:
       glPopMatrix();
 
       if (shader) shader->end();
+      */
       glutSwapBuffers();
       glPopMatrix();
 
@@ -151,14 +154,14 @@ public:
         //texturas
         shader = SM.loadfromFile("vertexshader.txt", "fragmentshader.txt"); // load (and compile, link) from file
         if (shader == 0)
-            std::cout << "Error Loading, compiling or linking shader1\n";
+            std::cout << "Error Loading, compiling or linking shader\n";
         else
         {
             ProgramObject = shader->GetProgramObject();
         }
         shader1 = SM.loadfromFile("vertexshaderT.txt", "fragmentshaderT.txt"); // load (and compile, link) from file
         if (shader1 == 0)
-            std::cout << "Error Loading, compiling or linking shader2\n";
+            std::cout << "Error Loading, compiling or linking shader1\n";
         else
         {
             ProgramObject = shader1->GetProgramObject();
@@ -168,15 +171,15 @@ public:
         timer010 = 0.0f;
         bUp = true;
 
+        //DEFINICIÓN DE LAS MALLAS UTILIZADAS EN EL PROYECTO
+
         objmodel_ptr = NULL;
         objmodel_ptr2 = NULL;
         objmodel_ptr3 = NULL;
         objmodel_ptr4 = NULL;
-        objmodel_ptr5 = NULL;
+        objmodel_ptr5 = NULL;        
 
-
-        //***Abrir la malla
-        glPushMatrix();
+        //ESTA SECCIÓN CORRESPONDE A LA DEFINICIÓN DE LA MALLA PARA LA MINA.
         if (!objmodel_ptr)
         {
             objmodel_ptr = glmReadOBJ("./models/mina.obj");
@@ -188,11 +191,11 @@ public:
             glmFacetNormals(objmodel_ptr);
             glmVertexNormals(objmodel_ptr, 90.0);
         }
-        glPopMatrix();
-        glPushMatrix();
+
+        //ESTA SECCIÓN CORRESPONDE A LA DEFINICIÓN DE LA MALLA PARA LOS ÁRBOLES.
         if (!objmodel_ptr2)
         {
-            objmodel_ptr2 = glmReadOBJ("./models/arbol.obj");
+            objmodel_ptr2 = glmReadOBJ("./models/arbolarreglado.obj");
             if (!objmodel_ptr2)
                 exit(0);
             
@@ -202,9 +205,7 @@ public:
             glmFacetNormals(objmodel_ptr2);
             glmVertexNormals(objmodel_ptr2, 90.0);
         }
-        glPopMatrix();
-        glPushMatrix();
-        
+        //ESTA SECCIÓN CORRESPONDE A LA DEFINICIÓN DE LA MALLA PARA LAS CASAS.
         if (!objmodel_ptr3)
         {
             objmodel_ptr3 = glmReadOBJ("./models/casa.obj");
@@ -217,9 +218,8 @@ public:
             glmFacetNormals(objmodel_ptr3);
             glmVertexNormals(objmodel_ptr3, 90.0);
         }
-        glPopMatrix();
 
-        glPushMatrix();
+        //ESTA SECCIÓN CORRESPONDE A LA DEFINICIÓN DE LA MALLA PARA EL TALADRO
         if (!objmodel_ptr4)
         {
             objmodel_ptr4 = glmReadOBJ("./models/untaladro.obj");
@@ -232,9 +232,9 @@ public:
             glmFacetNormals(objmodel_ptr4);
             glmVertexNormals(objmodel_ptr4, 90.0);
         }
-        glPopMatrix();
+        
 
-        glPushMatrix();
+        //ESTA SECCIÓN CORRESPONDE A LA DEFINICIÓN DE LA MALLA PARA LOS EDIFICIOS.
         if (!objmodel_ptr5)
         {
             objmodel_ptr5 = glmReadOBJ("./models/Edificio.obj");
@@ -247,12 +247,8 @@ public:
             glmFacetNormals(objmodel_ptr5);
             glmVertexNormals(objmodel_ptr5, 90.0);
         }
-        glPopMatrix();
-
-
-        //*****
 		
-      
+      initialize_textures();
       DemoLight();
 
 	}
@@ -324,8 +320,8 @@ public:
      
      // Light model parameters:
      // -------------------------------------------
-     
-     GLfloat lmKa[] = {0.0, 0.0, 0.0, 0.0 };
+     /**/
+     /*GLfloat lmKa[] = {0.0, 0.0, 0.0, 0.0 };
      glLightModelfv(GL_LIGHT_MODEL_AMBIENT, lmKa);
      
      glLightModelf(GL_LIGHT_MODEL_LOCAL_VIEWER, 1.0);
@@ -349,7 +345,7 @@ public:
      glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION,Kc);
      glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, Kl);
      glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, Kq);
-     
+    
      
      // ------------------------------------------- 
      // Lighting parameters:
@@ -367,11 +363,11 @@ public:
      // -------------------------------------------
      // Material parameters:
 
-     GLfloat material_Ka[] = {0.5f, 0.0f, 0.0f, 1.0f};
-     GLfloat material_Kd[] = {0.4f, 0.4f, 0.5f, 1.0f};
-     GLfloat material_Ks[] = {0.8f, 0.8f, 0.0f, 1.0f};
-     GLfloat material_Ke[] = {0.1f, 0.0f, 0.0f, 0.0f};
-     GLfloat material_Se = 20.0f;
+     //GLfloat material_Ka[] = {0.5f, 0.0f, 0.0f, 1.0f};
+     //GLfloat material_Kd[] = {0.4f, 0.4f, 0.5f, 1.0f};
+     //GLfloat material_Ks[] = {0.8f, 0.8f, 0.0f, 1.0f};
+     //GLfloat material_Ke[] = {0.1f, 0.0f, 0.0f, 0.0f};
+     //GLfloat material_Se = 20.0f;
      
      /*
      glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, material_Ka);

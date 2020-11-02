@@ -1,1 +1,6 @@
-﻿  TemplateProject.vcxproj -> C:\Users\jhons\OneDrive\Documentos\GitHub\Proyecto-Evangelion\GLSL_Lighting\Debug\TemplateProject.exe
+﻿cl : línea de comandos warning D9035: La opción 'Gm' está desusada y se quitará en próximas versiones
+  main.cpp
+C:\Users\jhons\OneDrive\Documentos\GitHub\Proyecto-Evangelion\GLSL_Lighting\main.cpp(41,16): warning C4101: 'h': variable local sin referencia
+C:\Users\jhons\OneDrive\Documentos\GitHub\Proyecto-Evangelion\GLSL_Lighting\main.cpp(41,13): warning C4101: 'w': variable local sin referencia
+C:\Users\jhons\OneDrive\Documentos\GitHub\Proyecto-Evangelion\GLSL_Lighting\main.cpp(84,1): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+  TemplateProject.vcxproj -> C:\Users\jhons\OneDrive\Documentos\GitHub\Proyecto-Evangelion\GLSL_Lighting\Debug\TemplateProject.exe
