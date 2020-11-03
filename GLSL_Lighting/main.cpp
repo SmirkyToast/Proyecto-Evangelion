@@ -26,25 +26,30 @@ protected:
    clock_t time0,time1;
    float timer010;  // timer counting 0->1->0
    bool bUp;        // flag if counting up or down.
+   //IDENTIFICADORES PARA LOS MODELOS USADOS EN EL PROYECTO
    GLMmodel* objmodel_ptr;
    GLMmodel* objmodel_ptr2;
    GLMmodel* objmodel_ptr3;
    GLMmodel* objmodel_ptr4;
    GLMmodel* objmodel_ptr5;
+   //IDENTIFICADORES PARA LAS TEXTURAS USADAS EN LOS MODELOS
    GLuint texid;
+   GLuint texid2;
+   GLuint texid3;
+   GLuint texid4;
+   GLuint texid5;
 
 
 public:
 	myWindow(){}
+
+    //PARA PODER LEER LAS TEXTURAS DE LOS ARCHIVOS JPG, SE DECIDIÓ IMPLEMENTAR UNA MEDIDA QUE SE CONSIDERA TEMPORAL Y ES CREAR UNA FUNCIÓN PARA CADA TEXTURA.
+    //ESTA DECISIÓN SE TOMÓ PORQUE LO PRINCIPAL ES VER EL ASPECTO DEL PROYECTO USANDO TEXTURAS, VER CÓMO SE COMPORTAN Y SI QUEDAN BIEN.
+
+    //FUNCIÓN DONDE SE LEE LA TEXTURA PARA EL TALADRO, ESTE SERÍA EL ELEMENTO ARTIFICIAL QUE SE PIDE EN LA ENTREGA.
     void initialize_textures(void)
-    {
-        int w, h;
+    {       
         GLubyte* data = 0;
-        //data = glmReadPPM("soccer_ball_diffuse.ppm", &w, &h);
-        //std::cout << "Read soccer_ball_diffuse.ppm, width = " << w << ", height = " << h << std::endl;
-
-        //dib1 = loadImage("soccer_ball_diffuse.jpg"); //FreeImage
-
         glGenTextures(1, &texid);
         glBindTexture(GL_TEXTURE_2D, texid);
         glTexEnvi(GL_TEXTURE_2D, GL_TEXTURE_ENV_MODE, GL_MODULATE);
@@ -53,8 +58,120 @@ public:
 
         // Loading JPG file
         FIBITMAP* bitmap = FreeImage_Load(
-            FreeImage_GetFileType("./mallas/jorge.jpg", 0),
-            "./mallas/jorge.jpg");  //*** Para Textura: esta es la ruta en donde se encuentra la textura
+            FreeImage_GetFileType("./mallas/metal.jpg", 0),
+            "./mallas/metal.jpg");  //*** Para Textura: esta es la ruta en donde se encuentra la textura
+
+        FIBITMAP* pImage = FreeImage_ConvertTo32Bits(bitmap);
+        int nWidth = FreeImage_GetWidth(pImage);
+        int nHeight = FreeImage_GetHeight(pImage);
+
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, nWidth, nHeight,
+            0, GL_BGRA, GL_UNSIGNED_BYTE, (void*)FreeImage_GetBits(pImage));
+
+        FreeImage_Unload(pImage);
+        //
+        glEnable(GL_TEXTURE_2D);
+    }
+
+    //FUNCIÓN DONDE SE LEE LA TEXTURA PARA LOS ÁRBOLES, ESTE SERÍA EL ELEMENTO NATURAL QUE PIDE LA ENTREGA.
+    void initialize_textures2(void)
+    {
+        GLubyte* data = 0;      
+
+        glGenTextures(1, &texid2);
+        glBindTexture(GL_TEXTURE_2D, texid2);
+        glTexEnvi(GL_TEXTURE_2D, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
+        // Loading JPG file
+        FIBITMAP* bitmap = FreeImage_Load(
+            FreeImage_GetFileType("./mallas/madera.jpg", 0),
+            "./mallas/madera.jpg");  //*** Para Textura: esta es la ruta en donde se encuentra la textura
+
+        FIBITMAP* pImage = FreeImage_ConvertTo32Bits(bitmap);
+        int nWidth = FreeImage_GetWidth(pImage);
+        int nHeight = FreeImage_GetHeight(pImage);
+
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, nWidth, nHeight,
+            0, GL_BGRA, GL_UNSIGNED_BYTE, (void*)FreeImage_GetBits(pImage));
+
+        FreeImage_Unload(pImage);
+        //
+        glEnable(GL_TEXTURE_2D);
+    }
+
+    //FUNCIÓN DONDE SE LEE LA TEXTURA PARA LAS CASAS, ESTE SERÍA EL ELEMENTO CREADO POR LA TRIBU CON TEXTURA.
+    void initialize_textures3(void)
+    {
+        GLubyte* data = 0;
+
+        glGenTextures(1, &texid3);
+        glBindTexture(GL_TEXTURE_2D, texid3);
+        glTexEnvi(GL_TEXTURE_2D, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
+        // Loading JPG file
+        FIBITMAP* bitmap = FreeImage_Load(
+            FreeImage_GetFileType("./mallas/casat2.jpg", 0),
+            "./mallas/casat2.jpg");  //*** Para Textura: esta es la ruta en donde se encuentra la textura
+
+        FIBITMAP* pImage = FreeImage_ConvertTo32Bits(bitmap);
+        int nWidth = FreeImage_GetWidth(pImage);
+        int nHeight = FreeImage_GetHeight(pImage);
+
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, nWidth, nHeight,
+            0, GL_BGRA, GL_UNSIGNED_BYTE, (void*)FreeImage_GetBits(pImage));
+
+        FreeImage_Unload(pImage);
+        //
+        glEnable(GL_TEXTURE_2D);
+    }
+
+    //FUNCIÓN DONDE SE LEE LA TEXTURA DE LOS EDIFICIOS. OTRO ELEMENTO CREADO POR LA TRIBU Y SOBRE EL CUAL SE USAN TEXTURAS.
+    void initialize_textures4(void)
+    {
+        GLubyte* data = 0;
+
+        glGenTextures(1, &texid4);
+        glBindTexture(GL_TEXTURE_2D, texid4);
+        glTexEnvi(GL_TEXTURE_2D, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
+        // Loading JPG file
+        FIBITMAP* bitmap = FreeImage_Load(
+            FreeImage_GetFileType("./mallas/edificiot.jpg", 0),
+            "./mallas/edificiot.jpg");  //*** Para Textura: esta es la ruta en donde se encuentra la textura
+
+        FIBITMAP* pImage = FreeImage_ConvertTo32Bits(bitmap);
+        int nWidth = FreeImage_GetWidth(pImage);
+        int nHeight = FreeImage_GetHeight(pImage);
+
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, nWidth, nHeight,
+            0, GL_BGRA, GL_UNSIGNED_BYTE, (void*)FreeImage_GetBits(pImage));
+
+        FreeImage_Unload(pImage);
+        //
+        glEnable(GL_TEXTURE_2D);
+    }
+
+    //FUNCIÓN DONDE SE LEE LA TEXTURA PARA LA MINA. ESTE SERÍA OTRO ELEMENTO NATURAL.
+    void initialize_textures5(void)
+    {
+        GLubyte* data = 0;
+
+        glGenTextures(1, &texid5);
+        glBindTexture(GL_TEXTURE_2D, texid5);
+        glTexEnvi(GL_TEXTURE_2D, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
+        // Loading JPG file
+        FIBITMAP* bitmap = FreeImage_Load(
+            FreeImage_GetFileType("./mallas/roca.jpg", 0),
+            "./mallas/roca.jpg");  //*** Para Textura: esta es la ruta en donde se encuentra la textura
 
         FIBITMAP* pImage = FreeImage_ConvertTo32Bits(bitmap);
         int nWidth = FreeImage_GetWidth(pImage);
@@ -77,63 +194,77 @@ public:
       
          //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
 
-      //arboles
+      //SECCIÓN DONDE SE DIBUJAN LOS ÁRBOLES (ELEMENTO NATURAL).
       if (shader1) shader1->begin();
           glPushMatrix();      
           glTranslatef(0, 0.5, 0);
           glTranslatef(-1.6, 0, -2);
-          //glBindTexture(GL_TEXTURE_2D, texid);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL);
+          glBindTexture(GL_TEXTURE_2D, texid2);
+          //ÁRBOL # 1
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_TEXTURE | GLM_MATERIAL);
+          //ÁRBOL # 2
+          glTranslatef(-1.5, 0, -2);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
+          //ÁRBOL # 3
+          glTranslatef(-1, 0, -2);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
+          //ÁRBOL # 4
+          glTranslatef(-1.9, 0, -2);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
+          //ÁRBOL # 5
+          glTranslatef(-1.8, 0, -1.5);
+          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
           glPopMatrix();
       if (shader1) shader1->end();
 
-      
-      /*
-          glTranslatef(-1.5, 0, -2);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
-          glTranslatef(-1, 0, -2);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
-          glTranslatef(-1.9, 0, -2);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
-          glTranslatef(-1.8, 0, -1.5);
-          glmDraw(objmodel_ptr2, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
-      glPopMatrix();
-      
-      if (shader) shader->begin();
-      glPushMatrix();
-      //taladro(creo)
-          glTranslatef(-0.1, -1, 1);
-          glmDraw(objmodel_ptr, GLM_SMOOTH);
-      glPopMatrix();
+      //SECCIÓN DONDE SE DIBUJA EL TALADRO, CON SU RESPECTIVO USO DE MATERIALES Y TEXTURAS.
+      if (shader1) shader1->begin();
+        glPushMatrix();
+        glTranslatef(-0.5, 0.5, -0.5);
+        glRotatef(140, 0, 1, 0);
+        glScalef(1.5, 1.5, 1.5);
+        glBindTexture(GL_TEXTURE_2D, texid);
+        glmDraw(objmodel_ptr4, GLM_SMOOTH | GLM_MATERIAL| GLM_TEXTURE);
+        glPopMatrix();
+      if (shader1) shader1->end();
 
-      glPushMatrix();
-          glTranslatef(0, 0, 0);
-          glTranslatef(3, 0, -8);
-          glmDraw(objmodel_ptr3, GLM_SMOOTH);
-          glTranslatef(5, 0, -8);
-          glmDraw(objmodel_ptr3, GLM_SMOOTH);
-          glTranslatef(-4, 0, -8);
-          glmDraw(objmodel_ptr3, GLM_SMOOTH);
-          glTranslatef(3, 0, -8);
-          glmDraw(objmodel_ptr3, GLM_SMOOTH);
-      glPopMatrix();
-
-      glPushMatrix();
-        glTranslatef(0, 0.5, 0);
-        glmDraw(objmodel_ptr4, GLM_SMOOTH);
-      glPopMatrix();
-
-      glPushMatrix();
+      //SECCIÓN DONDE SE DIBUJAN LAS CASAS, SOBRE LAS CUALES SE APLICAN TEXTURAS.
+      if (shader1) shader1->begin();
+        glPushMatrix();
+      //CASAS
+        glTranslatef(0, 0, 0);
+        glTranslatef(3, 0, -8);
+        glBindTexture(GL_TEXTURE_2D, texid3);
+        glmDraw(objmodel_ptr3, GLM_SMOOTH | GLM_TEXTURE);
         glTranslatef(5, 0, -8);
-        glmDraw(objmodel_ptr5, GLM_SMOOTH);
-        glTranslatef(-2, 0, -3);
-        glmDraw(objmodel_ptr5, GLM_SMOOTH);
-        glTranslatef(4, 0, -6);
-        glmDraw(objmodel_ptr5, GLM_SMOOTH);
-      glPopMatrix();
+        glmDraw(objmodel_ptr3, GLM_SMOOTH | GLM_TEXTURE);
+        glTranslatef(-4, 0, -8);
+        glmDraw(objmodel_ptr3, GLM_SMOOTH | GLM_TEXTURE);
+        glTranslatef(3, 0, -8);
+        glmDraw(objmodel_ptr3, GLM_SMOOTH | GLM_TEXTURE);
+        glPopMatrix();
+      if (shader1) shader1->end();
 
-      if (shader) shader->end();
-      */
+      //SECCCIÓN DONDE SE DIBUJAN LOS EDIFICIOS.
+      if (shader1) shader1->begin();
+        glPushMatrix();
+        glTranslatef(5, 0, -8);
+        glBindTexture(GL_TEXTURE_2D, texid4);
+        glmDraw(objmodel_ptr5, GLM_SMOOTH | GLM_TEXTURE);
+        glTranslatef(-2, 0, -3);
+        glmDraw(objmodel_ptr5, GLM_SMOOTH | GLM_TEXTURE);
+        glTranslatef(4, 0, -6);
+        glmDraw(objmodel_ptr5, GLM_SMOOTH | GLM_TEXTURE);
+        glPopMatrix();
+      if (shader1) shader1->end();
+
+      //SECCIÓN DONDE SE DIBUJA LA MINA Y SOBRE LA CUAL SE APLICAN MATERIALES Y TEXTURAS.
+      if (shader1) shader1->begin();
+        glTranslatef(1, -1.3, 1);
+        glBindTexture(GL_TEXTURE_2D, texid5);
+        glmDraw(objmodel_ptr, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);      
+      if (shader1) shader1->end();      
+     
       glutSwapBuffers();
       glPopMatrix();
 
@@ -222,7 +353,7 @@ public:
         //ESTA SECCIÓN CORRESPONDE A LA DEFINICIÓN DE LA MALLA PARA EL TALADRO
         if (!objmodel_ptr4)
         {
-            objmodel_ptr4 = glmReadOBJ("./models/untaladro.obj");
+            objmodel_ptr4 = glmReadOBJ("./models/drill.obj");
             if (!objmodel_ptr4)
                 exit(0);
 
@@ -247,10 +378,14 @@ public:
             glmFacetNormals(objmodel_ptr5);
             glmVertexNormals(objmodel_ptr5, 90.0);
         }
-		
-      initialize_textures();
-      DemoLight();
 
+	  //LLAMADOS A TODAS LAS FUNCIONES NECESARIAS PARA EFECTOS DE REALISMO, ES DECIR, TEXTURAS E ILUMUNACIÓN.  	
+      initialize_textures();
+      initialize_textures2();
+      initialize_textures3();
+      initialize_textures4();
+      initialize_textures5();
+      DemoLight();
 	}
 
 	virtual void OnResize(int w, int h)
