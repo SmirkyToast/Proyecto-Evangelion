@@ -32,16 +32,92 @@ protected:
    GLMmodel* objmodel_ptr3;
    GLMmodel* objmodel_ptr4;
    GLMmodel* objmodel_ptr5;
+   GLMmodel* objmodel_ptr6;
    //IDENTIFICADORES PARA LAS TEXTURAS USADAS EN LOS MODELOS
    GLuint texid;
    GLuint texid2;
    GLuint texid3;
    GLuint texid4;
    GLuint texid5;
-
+   //VARIABLES PARA EL MOVIMIENTO DE LA CÁMARA.
+   float camX, camY, camZ;
+   bool moveXD, moveXI, moveYU, moveYD, moveZD, moveZA;
+   //VARIABLES PARA EL MOVIMIENTO DEL TALADRO.
+   float taladroX, taladroY, taladroZ;
+   bool movTaladroXD, movTaladroXI, movTaladroYU, movTaladroYD, movTaladroZD, movTaladroZA;
 
 public:
 	myWindow(){}
+    //FUNCIÖN PARA MOVIMIENTO DE LA CÁMARA EN EJES X, Y, Z
+    void movimientoCamara() 
+    {
+        if (moveXI == true)
+        {
+            camX = camX + 0.1;
+        }
+
+        if (moveXD == true)
+        {
+            camX = camX - 0.1;
+        }
+
+        if (moveYU == true)
+        {
+            camY = camY - 0.1;
+        }
+
+        if (moveYD == true)
+        {
+            camY = camY + 0.1;
+        }
+
+        if (moveZD == true)
+        {
+            camZ = camZ + 0.1;
+        }
+
+        if (moveZA == true)
+        {
+            camZ = camZ - 0.1;
+        }
+
+        glTranslatef(camX, camY, camZ);
+    }
+
+    void movimientoTaladro()
+    {
+        if (movTaladroXI == true)
+        {
+            taladroX = taladroX - 0.1;
+        }
+
+        if (movTaladroXD == true)
+        {
+            taladroX = taladroX + 0.1;
+        }
+
+        if (movTaladroYU == true)
+        {
+            taladroY = taladroY + 0.1;
+        }
+
+        if (movTaladroYD == true)
+        {
+            taladroY = taladroY - 0.1;
+        }
+
+        if (movTaladroZD == true)
+        {
+            taladroZ = taladroZ + 0.1;
+        }
+
+        if (movTaladroZA == true)
+        {
+            taladroZ = taladroZ - 0.1;
+        }
+
+        //glTranslatef(camX, camY, camZ);
+    }
 
     //PARA PODER LEER LAS TEXTURAS DE LOS ARCHIVOS JPG, SE DECIDIÓ IMPLEMENTAR UNA MEDIDA QUE SE CONSIDERA TEMPORAL Y ES CREAR UNA FUNCIÓN PARA CADA TEXTURA.
     //ESTA DECISIÓN SE TOMÓ PORQUE LO PRINCIPAL ES VER EL ASPECTO DEL PROYECTO USANDO TEXTURAS, VER CÓMO SE COMPORTAN Y SI QUEDAN BIEN.
@@ -191,6 +267,10 @@ public:
 	
       //timer010 = 0.09; //for screenshot!
       glPushMatrix();
+
+      //Movimiento de cámara
+      movimientoCamara();
+      movimientoTaladro();
       
          //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
 
@@ -220,7 +300,8 @@ public:
       //SECCIÓN DONDE SE DIBUJA EL TALADRO, CON SU RESPECTIVO USO DE MATERIALES Y TEXTURAS.
       if (shader1) shader1->begin();
         glPushMatrix();
-        glTranslatef(-0.5, 0.5, -0.5);
+        glTranslatef(taladroX, taladroY, taladroZ);
+        //glTranslatef(-0.5, 0.5, -0.5);
         glRotatef(140, 0, 1, 0);
         glScalef(1.5, 1.5, 1.5);
         glBindTexture(GL_TEXTURE_2D, texid);
@@ -262,8 +343,19 @@ public:
       if (shader1) shader1->begin();
         glTranslatef(1, -1.3, 1);
         glBindTexture(GL_TEXTURE_2D, texid5);
-        glmDraw(objmodel_ptr, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);      
-      if (shader1) shader1->end();      
+        glmDraw(objmodel_ptr, GLM_SMOOTH | GLM_MATERIAL | GLM_TEXTURE);
+      if (shader1) shader1->end();
+
+      //SECCIÓN DONDE SE DIBUJA EL PASTO.
+      if (shader1) shader1->begin();
+        glTranslatef(-2, 1, 2);
+        glmDraw(objmodel_ptr6, GLM_SMOOTH | GLM_MATERIAL);
+        glTranslatef(0, 0,-0.5);
+        glmDraw(objmodel_ptr6, GLM_SMOOTH | GLM_MATERIAL);
+        glTranslatef(0, 0, -0.5);
+        glmDraw(objmodel_ptr6, GLM_SMOOTH | GLM_MATERIAL);
+      if (shader1) shader1->end();
+
      
       glutSwapBuffers();
       glPopMatrix();
@@ -282,6 +374,27 @@ public:
 		glClearColor(0.5f, 0.5f, 1.0f, 0.0f);
 		glShadeModel(GL_SMOOTH);
 		glEnable(GL_DEPTH_TEST);
+        //INICIALIZACIÓN DE LA VARIABLES USADAS PARA EL MOVIMIENTO DE LA CÁMARA.
+        camX = 0.0;
+        camY = 0.0;
+        camZ = 0.0;
+        moveXD = false;
+        moveXI = false;
+        moveYU = false;
+        moveYD = false;
+        moveZD = false;
+        moveZA = false;
+        //INICIALIZACIÓN DE LAS VARIABLES USADAS PARA EL MOVIMIENTO DEL TALADRO.
+        taladroX = -0.5;
+        taladroY = 0.5;
+        taladroZ = -0.5;
+        movTaladroXD = false;
+        movTaladroXI = false;
+        movTaladroYU = false;
+        movTaladroYD = false;
+        movTaladroZD = false;
+        movTaladroZA = false;
+       
         //texturas
         shader = SM.loadfromFile("vertexshader.txt", "fragmentshader.txt"); // load (and compile, link) from file
         if (shader == 0)
@@ -308,7 +421,8 @@ public:
         objmodel_ptr2 = NULL;
         objmodel_ptr3 = NULL;
         objmodel_ptr4 = NULL;
-        objmodel_ptr5 = NULL;        
+        objmodel_ptr5 = NULL;
+        objmodel_ptr6 = NULL;
 
         //ESTA SECCIÓN CORRESPONDE A LA DEFINICIÓN DE LA MALLA PARA LA MINA.
         if (!objmodel_ptr)
@@ -379,6 +493,20 @@ public:
             glmVertexNormals(objmodel_ptr5, 90.0);
         }
 
+        //ESTA SECCIÓN CORRESPONDE A LA DEFINICIÓN DEL PASTO COMO ELEMENTO REALISTA ADICIONAL.
+        if (!objmodel_ptr6)
+        {
+            objmodel_ptr6 = glmReadOBJ("./models/pasto.obj");
+            if (!objmodel_ptr6)
+                exit(0);
+
+            glTranslatef(1, 1, 0);
+
+            glmUnitize(objmodel_ptr6);
+            glmFacetNormals(objmodel_ptr6);
+            glmVertexNormals(objmodel_ptr6, 90.0);
+        }
+
 	  //LLAMADOS A TODAS LAS FUNCIONES NECESARIAS PARA EFECTOS DE REALISMO, ES DECIR, TEXTURAS E ILUMUNACIÓN.  	
       initialize_textures();
       initialize_textures2();
@@ -415,15 +543,134 @@ public:
 		if (cAscii == 27) // 0x1b = ESC
 		{
 			this->Close(); // Close Window!
-		} 
+		}
+        else if (cAscii == 'a')
+        {
+            moveXI = true;
+        }
+
+        else if (cAscii == 'd') 
+        {
+            moveXD = true;
+        }
+        
+        else if (cAscii == 'w') 
+        {
+            moveYU = true;
+        }
+
+        else if (cAscii == 's') 
+        {
+            moveYD = true;
+        }
+
+        else if (cAscii == 'o')
+        {
+            moveZD = true;
+        }
+
+        else if (cAscii == 'l')
+        {
+            moveZA = true;
+        }
+
+        else if (cAscii == 'h')
+        {
+            movTaladroXI = true;
+        }
+
+        else if (cAscii == 'k')
+        {
+            movTaladroXD = true;
+        }
+
+        else if (cAscii == 'u')
+        {
+            movTaladroYU = true;
+        }
+
+        else if (cAscii == 'j')
+        {
+            movTaladroYD = true;
+        }
+
+        else if (cAscii == 't')
+        {
+            movTaladroZD = true;
+        }
+
+        else if (cAscii == 'g')
+        {
+            movTaladroZA = true;
+        }
 	};
 
 	virtual void OnKeyUp(int nKey, char cAscii)
 	{
-      if (cAscii == 's')      // s: Shader
+      if (cAscii == 'q')      // s: Shader
          shader->enable();
       else if (cAscii == 'f') // f: Fixed Function
          shader->disable();
+
+      else if (cAscii == 'a')
+      {
+          moveXI = false;
+      }
+
+      else if (cAscii == 'd')
+      {
+          moveXD = false;
+      }
+
+      else if (cAscii == 'w')
+      {
+          moveYU = false;
+      }
+
+      else if (cAscii == 's')
+      {
+          moveYD = false;
+      }
+
+      else if (cAscii == 'o')
+      {
+          moveZD = false;
+      }
+
+      else if (cAscii == 'l')
+      {
+          moveZA = false;
+      }
+
+      else if (cAscii == 'h')
+      {
+          movTaladroXI = false;
+      }
+
+      else if (cAscii == 'k')
+      {
+          movTaladroXD = false;
+      }
+
+      else if (cAscii == 'u')
+      {
+          movTaladroYU = false;
+      }
+
+      else if (cAscii == 'j')
+      {
+          movTaladroYD = false;
+      }
+
+      else if (cAscii == 't')
+      {
+          movTaladroZD = false;
+      }
+
+      else if (cAscii == 'g')
+      {
+          movTaladroZA = false;
+      }
 	}
 
    void UpdateTimer()
